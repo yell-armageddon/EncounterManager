@@ -8,7 +8,7 @@ Created on Sat Jun 20 11:01:22 2020
 
 import pandas as pd
 import pathlib
-import os 
+import os
 from datetime import date
 import time
 import sys
@@ -43,11 +43,11 @@ def initializeDeck():
     return 1
 
 def saveRoads():
-    RoadsDf.to_csv(  Roads, header=None, index=False  ) 
+    RoadsDf.to_csv(  Roads, header=None, index=False  )
 
 def saveCities():
-    CitiesDf.to_csv(  Cities, header=None, index=False  ) 
-    
+    CitiesDf.to_csv(  Cities, header=None, index=False  )
+
 def shuffle(df):
     return df.sample(frac=1)
 
@@ -69,14 +69,14 @@ def showCityImage():
     plt.imshow(mpimg.imread(image))
     plt.show()
 
-    
+
 def showRoadImage():
     nr=str(RoadsDf.iloc[0][0])
     image = os.path.join(RoadFolder, 're-'+nr.zfill(2)+'-f.png')
     img = mpimg.imread(image)
 
     fig, axes = plt.subplots(1, 1, figsize=(10, 10))
-    plt.imshow(img) 
+    plt.imshow(img)
     plt.tight_layout()
     plt.show()
     image = os.path.join(RoadFolder, 're-'+nr.zfill(2)+'-b.png')
@@ -84,8 +84,8 @@ def showRoadImage():
     plt.imshow(mpimg.imread(image))
     plt.tight_layout()
     plt.show()
-    
-    
+
+
 def AskDestroyOrBottomCard(df):
     while True:
         x=input("Press (d) to destroy the card, or (b) to put to the bottom. (s) to skip")
@@ -102,11 +102,11 @@ def AskDestroyOrBottomCard(df):
 
 print(helpText)
 while True:
-    text = input("Press a key: ") 
+    text = input("Press a key: ")
     text = str(text)
     if text =="h":
         print(helpText)
-        
+
     elif text == "sr":
         RoadsDf = shuffle(RoadsDf)
         saveRoads()
@@ -115,24 +115,24 @@ while True:
         CitiesDf = shuffle(CitiesDf)
         saveCities()
         print("Cities shuffeled.")
-    
+
     elif text == "ar":
          nr=input("Enter the road encounter number to add:")
          try:
            val = int(nr)
          except ValueError:
-           print("That's not an int!")           
+           print("That's not an int!")
          result = addEncounter(RoadsDf,val)
          if not result is None:
              RoadsDf= result
              RoadsDf = shuffle(RoadsDf)
              saveRoads()
              print("Encounter "+nr+" has been added to the road encounter. Also shuffled & saved.")
-    
+
     elif text == "sc":
         CitiesDf = shuffle(CitiesDf)
         saveCities()
-        print("Cities shuffeled.")         
+        print("Cities shuffeled.")
     elif text == "ac":
          nr=input("Enter the city encounter number to add:")
          try:
@@ -145,20 +145,19 @@ while True:
             CitiesDf = shuffle(CitiesDf)
             saveCities()
             print("Encounter "+nr+" has been added to the city encounter. Also shuffled & saved.")
-            
+
 
     elif text == "dc":
         showCityImage()
         CitiesDf = AskDestroyOrBottomCard(CitiesDf)
         saveCities()
-        
+
     elif text == "dr":
-        showRoadImage()     
+        showRoadImage()
         RoadsDf = AskDestroyOrBottomCard(RoadsDf)
         saveRoads()
-        
+
     elif text == "q":
         sys.exit("Programm quit.")
     else:
         print("Incorrect user input. Press h for help.")
-
