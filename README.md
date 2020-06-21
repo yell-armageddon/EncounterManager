@@ -9,13 +9,13 @@ To start run
 
 ### Interface
 Road Encounter:<br/>
-         dr: Draw.<br/>
-         sr: Shuffle.<br/>
-         ar: Add an road encounter.<br/>
+ *        dr: Draw.<br/>
+ *       sr: Shuffle.<br/>
+ *        ar: Add an road encounter.<br/>
 City Encounter:<br/>
-         dc: Draw.<br/>
-         sc: Shuffle.<br/>
-         ac: Add an city encounter.<br/>
+*         dc: Draw.<br/>
+*         sc: Shuffle.<br/>
+*         ac: Add an city encounter.<br/>
 Press q to quit.<br/>
 
 ### Storage
