@@ -1,0 +1,2 @@
+# EncounterManager
+Gloomhaven encounter manager
