@@ -3,8 +3,9 @@ Gloomhaven encounter manager
 
 Python command line application that manages a road and city encounter deck stored in individual text files.
 
+## Details
 To start run
-python em.py
+`python em.py`
 
 Interface:
 Road Encounter:
