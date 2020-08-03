@@ -1,0 +1,7 @@
+Drawing road encounter 1.
+Encounter put to bottom.
+Drawing road encounter 2.
+Encounter destroyed.
+Removing goal 511.
+Removing goal 510.
+Removing goal 531.
